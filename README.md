@@ -21,10 +21,9 @@ Aplicación sencilla que permite registrar el tiempo dedicado a tareas utilizand
 ## Estructura del proyecto
 TaskTimer/
 │
-├── src/
-│   ├── app.js            # Lógica del temporizador, historial y estadísticas
-│   ├── index.html        # Interfaz principal de la aplicación
-│   └── styles.css        # Estilos y diseño (UI) del proyecto
+├── app.js            # Lógica del temporizador, historial y estadísticas
+├── index.html        # Interfaz principal de la aplicación
+├── styles.css        # Estilos y diseño (UI) del proyecto
 │
 ├── README.md             # Documentación principal del proyecto
 └── LICENSE               # Licencia del software libre (MIT por defecto)
@@ -34,3 +33,4 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obt
 
 ## Contribuciones
 ¡Te invito a contribuir a este proyecto! Si tienes alguna idea, sugerencia o corrección, no dudes en abrir un issue o enviar un pull request. 
+
