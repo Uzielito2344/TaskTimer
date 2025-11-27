@@ -1,0 +1,245 @@
+/* ============================================================
+   TaskTimer - Hoja de estilos principal
+   Estilos visuales, tipografía, colores y diseño general.
+   ------------------------------------------------------------
+   Autor: (Tu nombre)
+   Licencia: MIT / GPL / la que hayas elegido
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Variables globales (CSS Custom Properties)
+   Facilitan cambiar colores o estilos sin editar todo el archivo.
+------------------------------------------------------------- */
+:root {
+    --bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card: #ffffff;
+    --primary: #5b7fd8;
+    --secondary: #4a90e2;
+    --accent: #00c9a7;
+    --text: #2c3e50;
+    --text-light: #6b7c93;
+    --border: #e1e8ed;
+    --hover: #4a6bc7;
+    --success: #48c9b0;
+    --danger: #5dade2;
+    --card-shadow: rgba(91, 127, 216, 0.15);
+}
+
+/* ------------------------------------------------------------
+   Reset básico para evitar inconsistencias entre navegadores.
+------------------------------------------------------------- */
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------
+   Estilos generales del cuerpo de la página.
+------------------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* ------------------------------------------------------------
+   Contenedor principal de la aplicación.
+------------------------------------------------------------- */
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--card);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--card-shadow);
+    border: 1px solid rgba(91, 127, 216, 0.1);
+}
+
+/* ------------------------------------------------------------
+   Título principal (TaskTimer)
+------------------------------------------------------------- */
+h1 { 
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 600;
+
+    /* Efecto degradado en el texto */
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ------------------------------------------------------------
+   Fila de entrada: campo de texto + botones
+------------------------------------------------------------- */
+.input-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------------
+   Campo de texto para capturar el nombre de la tarea
+------------------------------------------------------------- */
+input[type="text"] {
+    flex: 1;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+/* Efecto visual al enfocarse */
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(91, 127, 216, 0.1);
+}
+
+/* ------------------------------------------------------------
+   Botones generales
+------------------------------------------------------------- */
+button {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover para botones */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto al presionar */
+button:active {
+    transform: translateY(0);
+}
+
+/* Estilo para botones deshabilitados */
+button:disabled { 
+    opacity: 0.5; 
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ------------------------------------------------------------
+   Botón INICIAR
+------------------------------------------------------------- */
+#startBtn { 
+    background: linear-gradient(135deg, var(--accent), #00b894);
+    color: white;
+}
+
+#startBtn:hover {
+    background: linear-gradient(135deg, #00b894, var(--accent));
+}
+
+/* ------------------------------------------------------------
+   Botón PAUSAR
+------------------------------------------------------------- */
+#pauseBtn { 
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: white;
+}
+
+/* ------------------------------------------------------------
+   Botón DETENER
+------------------------------------------------------------- */
+#stopBtn { 
+    background: linear-gradient(135deg, var(--danger), #6c5ce7);
+    color: white;
+}
+
+/* ------------------------------------------------------------
+   Sección del temporizador y tarea actual
+------------------------------------------------------------- */
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8faff, #e8f1ff);
+    border-radius: 16px;
+    border: 2px solid rgba(91, 127, 216, 0.15);
+}
+
+/* Reloj (contador HH:MM:SS) */
+#timer {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 0 2px 4px rgba(91, 127, 216, 0.1);
+}
+
+/* Tarea activa */
+.current-task { 
+    color: var(--text-light);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------------
+   Historial de tareas registradas
+------------------------------------------------------------- */
+.history {
+    margin-top: 30px;
+}
+
+.history h2 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.history ul { 
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+/* Cada elemento del historial */
+.history li { 
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+
+/* hover en elementos del historial */
+.history li:hover {
+    background: #f8faff;
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* ------------------------------------------------------------
+   Sección de estadísticas (tiempo total por tarea)
+------------------------------------------------------------- */
+.stats { 
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 15px;
+    color: var(--text);
+    background: linear-gradient(135deg, #f0f4ff, #e8f5e9);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    font-weight: 500;
+}

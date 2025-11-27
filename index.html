@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TaskTimer</title>
+
+    <!--
+        Hoja de estilos principal.
+        Contiene los estilos generales de layout, tipografía y diseño.
+    -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- 
+        Contenedor principal de la aplicación.
+        Toda la interfaz se agrupa dentro de <main> para mantener estructura semántica.
+    -->
+    <main class="container">
+
+        <!-- Título principal del sistema -->
+        <h1>TaskTimer</h1>
+
+        <!--
+            Sección de entrada de datos:
+            - Campo para ingresar el nombre de la tarea
+            - Botones para controlar el temporizador (inicio, pausa, detener)
+        -->
+        <div class="input-row">
+            <!-- Campo de texto donde el usuario escribe el nombre de la tarea -->
+            <input id="taskName" type="text" placeholder="Nombre de la tarea" />
+
+            <!-- Botón para iniciar el cronómetro -->
+            <button id="startBtn">Iniciar</button>
+
+            <!-- Botón para pausar el conteo (deshabilitado por defecto) -->
+            <button id="pauseBtn" disabled>Pausa</button>
+
+            <!-- Botón para detener y registrar el tiempo (deshabilitado por defecto) -->
+            <button id="stopBtn" disabled>Detener</button>
+        </div>
+
+        <!--
+            Sección donde se muestra el temporizador en tiempo real.
+            También muestra la tarea actual que se está cronometrando.
+        -->
+        <section class="timer-display">
+            <!-- Pantalla principal del cronómetro -->
+            <div id="timer">00:00:00</div>
+
+            <!-- Texto que indica cuál tarea está siendo registrada -->
+            <div id="currentTask" class="current-task">—</div>
+        </section>
+
+        <!--
+            Historial de registros:
+            Cada vez que una tarea termina, su tiempo acumulado se guarda
+            y se muestra aquí en forma de lista.
+        -->
+        <section class="history">
+            <h2>Historial</h2>
+            <ul id="historyList"></ul>
+        </section>
+
+        <!--
+            Sección de estadísticas:
+            Aquí se mostrarán cálculos generales como:
+            - tiempo total dedicado
+            - cantidad de tareas realizadas
+            - tiempo promedio, etc.
+        -->
+        <section class="stats">
+            <h2>Estadísticas</h2>
+
+            <!-- Área donde se inyectan los datos generados con JS -->
+            <div id="statsArea">Sin datos aún</div>
+        </section>
+    </main>
+
+    <!--
+        Archivo principal de JavaScript.
+        Contiene toda la lógica de:
+        - Temporizador
+        - Guardado en localStorage
+        - Actualización de historial
+        - Cálculo de estadísticas
+    -->
+    <script src="app.js"></script>
+</body>
+</html>
